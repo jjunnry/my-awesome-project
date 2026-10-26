@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>解杰 - 个人简历</title>
+<meta name="description" content="解杰的个人简历：全栈开发 / AI 应用方向。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+<style>
+  :root{
+    --bg:#ffffff;
+    --bg-soft:#f7f8fa;
+    --text:#1a1d23;
+    --text-soft:#5a6272;
+    --line:#e6e9ef;
+    --accent:#2f6df6;
+    --accent-soft:#eaf1ff;
+    --radius:14px;
+    --maxw:900px;
+  }
+  html[data-theme="dark"]{
+    --bg:#14171c;
+    --bg-soft:#1b1f26;
+    --text:#e8eaee;
+    --text-soft:#9aa3b2;
+    --line:#2a2f38;
+    --accent:#5b8dff;
+    --accent-soft:#1e2a45;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    -webkit-font-smoothing:antialiased;
+    transition:background .25s ease,color .25s ease;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* ---------- 顶栏 ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:blur(12px);
+    background:color-mix(in srgb,var(--bg) 82%,transparent);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+  .brand{font-weight:700;letter-spacing:.02em}
+  .nav{display:flex;gap:22px;align-items:center}
+  .nav a{color:var(--text-soft);text-decoration:none;font-size:14.5px;transition:color .18s}
+  .nav a:hover{color:var(--accent)}
+  .icon-btn{
+    border:1px solid var(--line);background:var(--bg-soft);color:var(--text);
+    width:36px;height:36px;border-radius:10px;cursor:pointer;
+    display:grid;place-items:center;font-size:15px;transition:.18s;
+  }
+  .icon-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* ---------- 头部 ---------- */
+  header{padding:64px 0 40px;border-bottom:1px solid var(--line)}
+  .hero{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+  .avatar{
+    width:104px;height:104px;border-radius:50%;flex:0 0 auto;
+    background:linear-gradient(135deg,var(--accent),#8b5cf6);
+    display:grid;place-items:center;color:#fff;font-size:38px;font-weight:700;
+    box-shadow:0 8px 24px -8px color-mix(in srgb,var(--accent) 60%,transparent);
+    overflow:hidden;
+  }
+  .avatar img{width:100%;height:100%;object-fit:cover}
+  h1{font-size:33px;margin:0 0 6px;letter-spacing:-.01em}
+  .role{color:var(--accent);font-weight:600;font-size:16px;margin:0 0 10px}
+  .meta{color:var(--text-soft);font-size:14.5px;display:flex;gap:16px;flex-wrap:wrap}
+  .meta span{display:inline-flex;align-items:center;gap:6px}
+  .links{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+  .links a{
+    display:inline-flex;align-items:center;gap:7px;
+    padding:8px 15px;border-radius:9px;font-size:14px;font-weight:500;
+    text-decoration:none;border:1px solid var(--line);
+    color:var(--text);background:var(--bg-soft);transition:.18s;
+  }
+  .links a:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+  .links a.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .links a.primary:hover{opacity:.9;color:#fff}
+
+  /* ---------- 区块 ---------- */
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:none}
+  h2{
+    font-size:13px;text-transform:uppercase;letter-spacing:.13em;
+    color:var(--text-soft);font-weight:700;margin:0 0 22px;
+    display:flex;align-items:center;gap:10px;
+  }
+  h2::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  .summary{font-size:16.5px;color:var(--text-soft);margin:0}
+  .summary strong{color:var(--text)}
+
+  /* 技能 */
+  .skills{display:grid;gap:18px}
+  .skill-row{display:grid;grid-template-columns:132px 1fr;gap:16px;align-items:start}
+  .skill-cat{font-weight:600;font-size:14.5px;padding-top:3px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{
+    font-size:13px;padding:5px 11px;border-radius:7px;
+    background:var(--accent-soft);color:var(--accent);font-weight:500;
+  }
+
+  /* 时间线 */
+  .timeline{position:relative;padding-left:26px}
+  .timeline::before{
+    content:"";position:absolute;left:7px;top:6px;bottom:6px;
+    width:2px;background:var(--line);
+  }
+  .item{position:relative;padding-bottom:30px}
+  .item:last-child{padding-bottom:0}
+  .item::before{
+    content:"";position:absolute;left:-24px;top:7px;
+    width:11px;height:11px;border-radius:50%;
+    background:var(--bg);border:2.5px solid var(--accent);
+  }
+  .item-head{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:baseline}
+  .item-title{font-weight:700;font-size:16.5px}
+  .item-sub{color:var(--accent);font-size:14.5px;font-weight:500;margin-top:2px}
+  .item-date{color:var(--text-soft);font-size:13.5px;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .item ul{margin:10px 0 0;padding-left:19px;color:var(--text-soft);font-size:15px}
+  .item li{margin-bottom:6px}
+  .item li::marker{color:var(--accent)}
+  .stack{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
+  .stack span{
+    font-size:12.5px;padding:3px 9px;border-radius:6px;
+    border:1px solid var(--line);color:var(--text-soft);
+  }
+
+  /* 项目卡片 */
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:16px}
+  .card{
+    border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px;background:var(--bg-soft);
+    transition:.2s;display:flex;flex-direction:column;gap:9px;
+  }
+  .card:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .card h3{margin:0;font-size:16px}
+  .card p{margin:0;font-size:14.2px;color:var(--text-soft);flex:1}
+  .card a{font-size:13.5px;color:var(--accent);text-decoration:none;font-weight:600}
+  .card a:hover{text-decoration:underline}
+
+  footer{padding:34px 0 46px;text-align:center;color:var(--text-soft);font-size:13.5px}
+  footer a{color:var(--accent);text-decoration:none}
+
+  /* 打印 */
+  @media print{
+    .topbar,.links .primary{display:none}
+    body{font-size:12pt}
+    section{page-break-inside:avoid;padding:18px 0}
+    header{padding:0 0 18px}
+    .card:hover{transform:none}
+  }
+  @media (max-width:640px){
+    header{padding:42px 0 30px}
+    h1{font-size:26px}
+    .nav{display:none}
+    .skill-row{grid-template-columns:1fr;gap:6px}
+    .avatar{width:80px;height:80px;font-size:30px}
+    .wrap{padding:0 18px}
+  }
+  /* 滚动入场 */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">解杰 · Resume</div>
+    <nav class="nav">
+      <a href="#about">简介</a>
+      <a href="#skills">技能</a>
+      <a href="#experience">经历</a>
+      <a href="#projects">项目</a>
+      <button class="icon-btn" id="themeBtn" title="切换主题" aria-label="切换主题">🌙</button>
+    </nav>
+  </div>
+</div>
+
+<header>
+  <div class="wrap hero">
+    <div class="avatar">
+      <img src="avatar.svg" alt="头像" onerror="this.remove()">
+      <span>杰</span>
+    </div>
+    <div style="flex:1;min-width:260px">
+      <h1>解杰</h1>
+      <p class="role">全栈开发工程师 · AI 应用方向</p>
+      <div class="meta">
+        <span>📍 中国</span>
+        <span>💼 开放工作机会</span>
+        <span>✉️ <a href="mailto:15510655+jiedm@user.noreply.gitee.com" style="color:inherit;text-decoration:none">15510655+jiedm@user.noreply.gitee.com</a></span>
+      </div>
+      <div class="links">
+        <a class="primary" href="resume.pdf" target="_blank" rel="noopener">📄 下载 PDF 简历</a>
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://gitee.com/" target="_blank" rel="noopener">Gitee</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="about">
+    <h2>个人简介</h2>
+    <p class="summary reveal">
+      专注于 <strong>Web 全栈开发</strong> 与 <strong>AI 应用落地</strong> 的工程师。
+      擅长把复杂需求拆解为可交付的系统，关注代码质量、工程规范与用户体验。
+      熟悉从 0 到 1 的产品搭建，也具备大型项目维护与性能优化的实战经验。
+      <span style="display:block;margin-top:10px;font-size:15px">请把这段替换成你自己的介绍 —— 建议 3~5 句，突出技术栈、擅长领域和代表性成果。</span>
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>技能栈</h2>
+    <div class="skills reveal">
+      <div class="skill-row">
+        <div class="skill-cat">前端</div>
+        <div class="tags">
+          <span class="tag">HTML5 / CSS3</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">React</span>
+          <span class="tag">Vue 3</span>
+          <span class="tag">Vite</span>
+          <span class="tag">Tailwind CSS</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">后端</div>
+        <div class="tags">
+          <span class="tag">Node.js</span>
+          <span class="tag">Python</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Express / Koa</span>
+          <span class="tag">REST / GraphQL</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">数据与存储</div>
+        <div class="tags">
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Redis</span>
+          <span class="tag">MongoDB</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">工程与运维</div>
+        <div class="tags">
+          <span class="tag">Git</span>
+          <span class="tag">Docker</span>
+          <span class="tag">CI / CD</span>
+          <span class="tag">GitHub Actions</span>
+          <span class="tag">Linux</span>
+          <span class="tag">Nginx</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">AI 方向</div>
+        <div class="tags">
+          <span class="tag">LLM 应用开发</span>
+          <span class="tag">RAG</span>
+          <span class="tag">Prompt Engineering</span>
+          <span class="tag">Agent 工作流</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>工作经历</h2>
+    <div class="timeline reveal">
+
+      <div class="item">
+        <div class="item-head">
+          <div>
+            <div class="item-title">公司名称 · 高级前端 / 全栈工程师</div>
+            <div class="item-sub">核心业务团队</div>
+          </div>
+          <div class="item-date">2023.06 — 至今</div>
+        </div>
+        <ul>
+          <li>负责 XX 产品的前端架构设计与核心模块开发，服务日均 XX 万用户；</li>
+          <li>主导前端工程化改造，构建耗时从 X 分钟降至 Y 秒，首屏加载提升 XX%；</li>
+          <li>搭建组件库与设计规范，沉淀 XX 个通用组件，团队开发效率提升约 XX%。</li>
+        </ul>
+        <div class="stack">
+          <span>React</span><span>TypeScript</span><span>Vite</span><span>Node.js</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <div>
+            <div class="item-title">公司名称 · 前端开发工程师</div>
+            <div class="item-sub">中台研发组</div>
+          </div>
+          <div class="item-date">2021.03 — 2023.05</div>
+        </div>
+        <ul>
+          <li>参与 XX 中台系统的开发与迭代，独立负责 XX 模块从设计到上线；</li>
+          <li>优化接口与渲染性能，页面响应时间降低 XX%，用户投诉下降 XX%；</li>
+          <li>推动单元测试与代码评审流程落地，线上缺陷率下降 XX%。</li>
+        </ul>
+        <div class="stack">
+          <span>Vue 3</span><span>JavaScript</span><span>Webpack</span><span>MySQL</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <div>
+            <div class="item-title">公司名称 · 软件开发实习生</div>
+            <div class="item-sub">研发支持</div>
+          </div>
+          <div class="item-date">2020.07 — 2021.02</div>
+        </div>
+        <ul>
+          <li>协助完成内部工具的页面开发与数据处理脚本编写；</li>
+          <li>参与需求评审与测试，独立修复 XX 个线上缺陷。</li>
+        </ul>
+        <div class="stack">
+          <span>Python</span><span>HTML/CSS</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>项目作品</h2>
+    <div class="cards reveal">
+
+      <div class="card">
+        <h3>智能文档问答系统</h3>
+        <p>基于 RAG 的企业知识库问答：文档解析 → 向量检索 → LLM 生成，支持多轮追问与引用溯源。</p>
+        <div class="stack"><span>FastAPI</span><span>React</span><span>RAG</span></div>
+        <a href="#" target="_blank" rel="noopener">查看项目 →</a>
+      </div>
+
+      <div class="card">
+        <h3>DevOps 部署看板</h3>
+        <p>聚合多仓库 CI/CD 状态与发布记录的可视化看板，接入 GitHub Actions 实时推送构建结果。</p>
+        <div class="stack"><span>Node.js</span><span>Vue</span><span>Docker</span></div>
+        <a href="#" target="_blank" rel="noopener">查看项目 →</a>
+      </div>
+
+      <div class="card">
+        <h3>这个简历站</h3>
+        <p>纯静态、零依赖的个人简历页面，托管于 GitHub Pages，自带深色模式与打印优化。</p>
+        <div class="stack"><span>HTML</span><span>CSS</span><span>GitHub Pages</span></div>
+        <a href="https://github.com/" target="_blank" rel="noopener">查看源码 →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>教育背景</h2>
+    <div class="timeline reveal">
+      <div class="item">
+        <div class="item-head">
+          <div>
+            <div class="item-title">XX 大学 · 计算机科学与技术 · 本科</div>
+            <div class="item-sub">主修课程：数据结构、操作系统、计算机网络、数据库系统</div>
+          </div>
+          <div class="item-date">2016.09 — 2020.06</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p>© <span id="year">2026</span> 解杰 · 由 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> 托管</p>
+  <p style="margin-top:6px;font-size:12.5px;opacity:.75">本页面为纯静态 HTML，无任何第三方追踪脚本。</p>
+</footer>
+
+<script>
+(function () {
+  // 年份
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // 主题：localStorage 优先，其次系统偏好
+  var root = document.documentElement;
+  var btn = document.getElementById('themeBtn');
+  var saved = null;
+  try { saved = localStorage.getItem('resume-theme'); } catch (e) {}
+  var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var theme = saved || (prefersDark ? 'dark' : 'light');
+  apply(theme);
+
+  function apply(t) {
+    root.setAttribute('data-theme', t);
+    if (btn) btn.textContent = t === 'dark' ? '☀️' : '🌙';
+  }
+  if (btn) {
+    btn.addEventListener('click', function () {
+      theme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      apply(theme);
+      try { localStorage.setItem('resume-theme', theme); } catch (e) {}
+    });
+  }
+
+  // 滚动入场
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12 });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+})();
+</script>
+</body>
+</html>
