@@ -3,10 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>解杰 - 个人简历</title>
-<meta name="description" content="解杰的个人简历：全栈开发 / AI 应用方向。">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+<title>姚欣杰 - 个人简历</title>
+<meta name="description" content="姚欣杰的个人简历：AI 智能体开发 · 全栈工程落地。Dify / LangGraph / RAG / MCP 全链路，两段实习系统均已交付上线。">
+<meta property="og:title" content="姚欣杰 - 个人简历">
+<meta property="og:description" content="AI 智能体开发 · 全栈工程落地。Dify / LangGraph / RAG / MCP 全链路，两段实习系统均已交付上线。">
+<meta property="og:type" content="profile">
+<link rel="icon" href="avatar.jpg">
 <style>
   :root{
     --bg:#ffffff;
@@ -134,19 +136,6 @@
     border:1px solid var(--line);color:var(--text-soft);
   }
 
-  /* 项目卡片 */
-  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:16px}
-  .card{
-    border:1px solid var(--line);border-radius:var(--radius);
-    padding:20px;background:var(--bg-soft);
-    transition:.2s;display:flex;flex-direction:column;gap:9px;
-  }
-  .card:hover{border-color:var(--accent);transform:translateY(-2px)}
-  .card h3{margin:0;font-size:16px}
-  .card p{margin:0;font-size:14.2px;color:var(--text-soft);flex:1}
-  .card a{font-size:13.5px;color:var(--accent);text-decoration:none;font-weight:600}
-  .card a:hover{text-decoration:underline}
-
   footer{padding:34px 0 46px;text-align:center;color:var(--text-soft);font-size:13.5px}
   footer a{color:var(--accent);text-decoration:none}
 
@@ -156,7 +145,6 @@
     body{font-size:12pt}
     section{page-break-inside:avoid;padding:18px 0}
     header{padding:0 0 18px}
-    .card:hover{transform:none}
   }
   @media (max-width:640px){
     header{padding:42px 0 30px}
@@ -179,12 +167,13 @@
 
 <div class="topbar">
   <div class="wrap">
-    <div class="brand">解杰 · Resume</div>
+    <div class="brand">姚欣杰 · Resume</div>
     <nav class="nav">
       <a href="#about">简介</a>
       <a href="#skills">技能</a>
-      <a href="#experience">经历</a>
+      <a href="#internships">实习</a>
       <a href="#projects">项目</a>
+      <a href="#education">教育</a>
       <button class="icon-btn" id="themeBtn" title="切换主题" aria-label="切换主题">🌙</button>
     </nav>
   </div>
@@ -193,21 +182,22 @@
 <header>
   <div class="wrap hero">
     <div class="avatar">
-      <img src="avatar.svg" alt="头像" onerror="this.remove()">
+      <img src="avatar.jpg" alt="姚欣杰的照片" onerror="this.remove()">
       <span>杰</span>
     </div>
     <div style="flex:1;min-width:260px">
-      <h1>解杰</h1>
-      <p class="role">全栈开发工程师 · AI 应用方向</p>
+      <h1>姚欣杰</h1>
+      <p class="role">AI 智能体开发 · 全栈工程落地（2027 届）</p>
       <div class="meta">
-        <span>📍 中国</span>
-        <span>💼 开放工作机会</span>
-        <span>✉️ <a href="mailto:15510655+jiedm@user.noreply.gitee.com" style="color:inherit;text-decoration:none">15510655+jiedm@user.noreply.gitee.com</a></span>
+        <span>📍 广州 · 海珠</span>
+        <span>💼 开放实习 / 校招机会</span>
+        <span>📱 135 5630 7131</span>
+        <span>✉️ <a href="mailto:2668669724@qq.com" style="color:inherit;text-decoration:none">2668669724@qq.com</a></span>
+        <span>💬 微信 jjunnry</span>
       </div>
       <div class="links">
         <a class="primary" href="resume.pdf" target="_blank" rel="noopener">📄 下载 PDF 简历</a>
-        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://gitee.com/" target="_blank" rel="noopener">Gitee</a>
+        <a href="https://github.com/jjunnry" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </div>
@@ -218,10 +208,11 @@
   <section id="about">
     <h2>个人简介</h2>
     <p class="summary reveal">
-      专注于 <strong>Web 全栈开发</strong> 与 <strong>AI 应用落地</strong> 的工程师。
-      擅长把复杂需求拆解为可交付的系统，关注代码质量、工程规范与用户体验。
-      熟悉从 0 到 1 的产品搭建，也具备大型项目维护与性能优化的实战经验。
-      <span style="display:block;margin-top:10px;font-size:15px">请把这段替换成你自己的介绍 —— 建议 3~5 句，突出技术栈、擅长领域和代表性成果。</span>
+      广东第二师范学院<strong>数据科学与大数据技术</strong>专业 2027 届本科生，专注 <strong>AI 智能体开发</strong>与<strong>工程落地</strong>。
+      熟练掌握 Dify / LangGraph / RAG / MCP 智能体开发全链路，能独立完成从语料库构建、检索策略优化到 API 对接的完整流程。
+      先后完成两段 AI 智能体开发实习，主导搭建的 GIS 智能问答系统与 AI 语音调解系统均<strong>已实际交付上线</strong>。
+      同时具备扎实的全栈功底：独立完成 14 个业务模块的个人全栈项目，160+ pytest 测试覆盖，Nginx + HTTPS 生产部署，
+      擅长把前沿 AI 技术做成可交付、可运维的真实系统。
     </p>
   </section>
 
@@ -229,113 +220,98 @@
     <h2>技能栈</h2>
     <div class="skills reveal">
       <div class="skill-row">
-        <div class="skill-cat">前端</div>
+        <div class="skill-cat">AI 智能体</div>
         <div class="tags">
-          <span class="tag">HTML5 / CSS3</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">React</span>
-          <span class="tag">Vue 3</span>
-          <span class="tag">Vite</span>
-          <span class="tag">Tailwind CSS</span>
+          <span class="tag">Dify</span>
+          <span class="tag">LangGraph</span>
+          <span class="tag">RAG</span>
+          <span class="tag">MCP</span>
+          <span class="tag">Prompt 工程</span>
+          <span class="tag">Text-to-SQL</span>
+          <span class="tag">SSE 流式对话</span>
+          <span class="tag">DeepSeek</span>
         </div>
       </div>
       <div class="skill-row">
         <div class="skill-cat">后端</div>
         <div class="tags">
-          <span class="tag">Node.js</span>
           <span class="tag">Python</span>
-          <span class="tag">FastAPI</span>
-          <span class="tag">Express / Koa</span>
-          <span class="tag">REST / GraphQL</span>
+          <span class="tag">标准库自建 HTTP 服务</span>
+          <span class="tag">REST API</span>
+          <span class="tag">阿里云语音 API</span>
+          <span class="tag">JWT 双令牌</span>
+          <span class="tag">HMAC 签名</span>
         </div>
       </div>
       <div class="skill-row">
-        <div class="skill-cat">数据与存储</div>
+        <div class="skill-cat">前端</div>
         <div class="tags">
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">MySQL</span>
-          <span class="tag">Redis</span>
-          <span class="tag">MongoDB</span>
+          <span class="tag">Web Components</span>
+          <span class="tag">Vue 3</span>
+          <span class="tag">Element Plus</span>
+          <span class="tag">HTML5 / CSS3</span>
+          <span class="tag">JavaScript</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-cat">数据</div>
+        <div class="tags">
+          <span class="tag">向量数据库</span>
+          <span class="tag">语义检索与重排</span>
+          <span class="tag">关系型数据库</span>
+          <span class="tag">数据采集与网络爬虫</span>
         </div>
       </div>
       <div class="skill-row">
         <div class="skill-cat">工程与运维</div>
         <div class="tags">
           <span class="tag">Git</span>
-          <span class="tag">Docker</span>
-          <span class="tag">CI / CD</span>
-          <span class="tag">GitHub Actions</span>
+          <span class="tag">pytest（160+ 用例）</span>
+          <span class="tag">Nginx + HTTPS 部署</span>
           <span class="tag">Linux</span>
-          <span class="tag">Nginx</span>
-        </div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-cat">AI 方向</div>
-        <div class="tags">
-          <span class="tag">LLM 应用开发</span>
-          <span class="tag">RAG</span>
-          <span class="tag">Prompt Engineering</span>
-          <span class="tag">Agent 工作流</span>
+          <span class="tag">GitHub Pages</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="experience">
-    <h2>工作经历</h2>
+  <section id="internships">
+    <h2>实习经历</h2>
     <div class="timeline reveal">
 
       <div class="item">
         <div class="item-head">
           <div>
-            <div class="item-title">公司名称 · 高级前端 / 全栈工程师</div>
-            <div class="item-sub">核心业务团队</div>
+            <div class="item-title">广东省城乡规划设计研究院 · AI 智能体开发实习</div>
+            <div class="item-sub">GIS 智能体开发</div>
           </div>
-          <div class="item-date">2023.06 — 至今</div>
+          <div class="item-date">2026.01 — 2026.07</div>
         </div>
         <ul>
-          <li>负责 XX 产品的前端架构设计与核心模块开发，服务日均 XX 万用户；</li>
-          <li>主导前端工程化改造，构建耗时从 X 分钟降至 Y 秒，首屏加载提升 XX%；</li>
-          <li>搭建组件库与设计规范，沉淀 XX 个通用组件，团队开发效率提升约 XX%。</li>
+          <li>基于 Dify + MCP 架构从 0 到 1 搭建 GIS 领域智能问答系统，集成 50 万字专业语料库与 70+ 标准化空间网格指标，实现自然语言驱动的空间数据分析与选址推荐，系统已交付并支持内部业务咨询；</li>
+          <li>采用"父子分段"策略优化长文本 RAG 检索，解决多源异构空间数据的语义对齐难题，复杂规划问题回答准确率达 85%+；</li>
+          <li>开发 Text-to-SQL 智能查询工作流，支持用户通过对话直接查询空间数据库，非技术人员的选址装配效率提升 40%+。</li>
         </ul>
         <div class="stack">
-          <span>React</span><span>TypeScript</span><span>Vite</span><span>Node.js</span>
+          <span>Dify</span><span>MCP</span><span>RAG</span><span>Text-to-SQL</span><span>向量数据库</span>
         </div>
       </div>
 
       <div class="item">
         <div class="item-head">
           <div>
-            <div class="item-title">公司名称 · 前端开发工程师</div>
-            <div class="item-sub">中台研发组</div>
+            <div class="item-title">广州恒巨信息科技有限公司 · AI 智能体开发实习</div>
+            <div class="item-sub">AI 语音调解智能体</div>
           </div>
-          <div class="item-date">2021.03 — 2023.05</div>
+          <div class="item-date">2025.07 — 2025.09</div>
         </div>
         <ul>
-          <li>参与 XX 中台系统的开发与迭代，独立负责 XX 模块从设计到上线；</li>
-          <li>优化接口与渲染性能，页面响应时间降低 XX%，用户投诉下降 XX%；</li>
-          <li>推动单元测试与代码评审流程落地，线上缺陷率下降 XX%。</li>
+          <li>主导 AI 外呼调解系统后端开发，基于 Dify 搭建语音对话工作流，集成阿里云语音 API 实现"呼叫 → 语音识别 → 智能应答 → 语音合成"全链路闭环，系统已上线并支持实时语音对话；</li>
+          <li>独立攻克阿里云外呼 API 与 Dify 的异步通信及数据转换难题，设计状态机管理对话上下文，保障平均 3-5 分钟长时通话的稳定性与连贯性；</li>
+          <li>通过提示词工程优化智能体应答逻辑，对话完成率提升至 80%+，推动模块在 2 个月内完成试运行并交付。</li>
         </ul>
         <div class="stack">
-          <span>Vue 3</span><span>JavaScript</span><span>Webpack</span><span>MySQL</span>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item-head">
-          <div>
-            <div class="item-title">公司名称 · 软件开发实习生</div>
-            <div class="item-sub">研发支持</div>
-          </div>
-          <div class="item-date">2020.07 — 2021.02</div>
-        </div>
-        <ul>
-          <li>协助完成内部工具的页面开发与数据处理脚本编写；</li>
-          <li>参与需求评审与测试，独立修复 XX 个线上缺陷。</li>
-        </ul>
-        <div class="stack">
-          <span>Python</span><span>HTML/CSS</span>
+          <span>Dify</span><span>阿里云语音 API</span><span>状态机</span><span>Prompt 工程</span>
         </div>
       </div>
 
@@ -343,28 +319,43 @@
   </section>
 
   <section id="projects">
-    <h2>项目作品</h2>
-    <div class="cards reveal">
+    <h2>项目经历</h2>
+    <div class="timeline reveal">
 
-      <div class="card">
-        <h3>智能文档问答系统</h3>
-        <p>基于 RAG 的企业知识库问答：文档解析 → 向量检索 → LLM 生成，支持多轮追问与引用溯源。</p>
-        <div class="stack"><span>FastAPI</span><span>React</span><span>RAG</span></div>
-        <a href="#" target="_blank" rel="noopener">查看项目 →</a>
+      <div class="item">
+        <div class="item-head">
+          <div>
+            <div class="item-title">GIS 智能问答系统 · 校企合作项目</div>
+            <div class="item-sub">Agent 工作流 + RAG 知识库</div>
+          </div>
+          <div class="item-date">2025.07 — 至今</div>
+        </div>
+        <ul>
+          <li>基于 LangGraph + Dify + DeepSeek 搭建智能问答系统，设计"意图识别 → 多路检索 → 推理生成"的 Agent 工作流，实现政策与业务数据的统一问答；</li>
+          <li>清洗解析 500+ 份核心政策文件，构建 10 万+ 向量块的知识库，结合向量数据库优化语义检索与重排策略，解决复杂政策交叉解读难题；</li>
+          <li>持续优化 Prompt 与检索链路，系统综合准确率达 95%，简单问题秒级响应、复杂推理 1 分钟内返回，达到企业验收标准。</li>
+        </ul>
+        <div class="stack">
+          <span>LangGraph</span><span>Dify</span><span>DeepSeek</span><span>RAG</span><span>向量数据库</span><span>Vue 3</span>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>DevOps 部署看板</h3>
-        <p>聚合多仓库 CI/CD 状态与发布记录的可视化看板，接入 GitHub Actions 实时推送构建结果。</p>
-        <div class="stack"><span>Node.js</span><span>Vue</span><span>Docker</span></div>
-        <a href="#" target="_blank" rel="noopener">查看项目 →</a>
-      </div>
-
-      <div class="card">
-        <h3>这个简历站</h3>
-        <p>纯静态、零依赖的个人简历页面，托管于 GitHub Pages，自带深色模式与打印优化。</p>
-        <div class="stack"><span>HTML</span><span>CSS</span><span>GitHub Pages</span></div>
-        <a href="https://github.com/" target="_blank" rel="noopener">查看源码 →</a>
+      <div class="item">
+        <div class="item-head">
+          <div>
+            <div class="item-title">星育智桥 · 儿童自闭症智能评估与康复平台（个人全栈项目）</div>
+            <div class="item-sub">14 个业务模块 · 从架构设计到生产部署</div>
+          </div>
+          <div class="item-date">2024.10 — 2025.10</div>
+        </div>
+        <ul>
+          <li>独立完成 14 个业务模块的架构设计与开发：前端基于 Web Components 零依赖开发，后端基于 Python 标准库自建 HTTP 服务（Mixin + 单例模式）；</li>
+          <li>对接 Dify 实现 AI 评估与 SSE 流式对话，设计服务端代理保障数据安全；构建 JWT 双令牌、三级权限、HMAC 签名等完整安全体系；</li>
+          <li>编写 160+ pytest 测试用例，完成 Nginx + HTTPS 生产部署，实现系统高可用交付。</li>
+        </ul>
+        <div class="stack">
+          <span>Python</span><span>Web Components</span><span>Dify</span><span>SSE</span><span>JWT</span><span>pytest</span><span>Nginx</span>
+        </div>
       </div>
 
     </div>
@@ -376,10 +367,10 @@
       <div class="item">
         <div class="item-head">
           <div>
-            <div class="item-title">XX 大学 · 计算机科学与技术 · 本科</div>
-            <div class="item-sub">主修课程：数据结构、操作系统、计算机网络、数据库系统</div>
+            <div class="item-title">广东第二师范学院 · 数据科学与大数据技术 · 本科</div>
+            <div class="item-sub">主修课程：Python 程序设计、数据结构与算法、数据库系统原理、人工智能、软件工程、云计算、机器学习、深度学习、数据采集和网络爬虫、网络信息安全、Linux 体系与编程</div>
           </div>
-          <div class="item-date">2016.09 — 2020.06</div>
+          <div class="item-date">2023.09 — 2027.06</div>
         </div>
       </div>
     </div>
@@ -388,7 +379,7 @@
 </main>
 
 <footer class="wrap">
-  <p>© <span id="year">2026</span> 解杰 · 由 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> 托管</p>
+  <p>© <span id="year">2026</span> 姚欣杰 · 由 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> 托管</p>
   <p style="margin-top:6px;font-size:12.5px;opacity:.75">本页面为纯静态 HTML，无任何第三方追踪脚本。</p>
 </footer>
 
