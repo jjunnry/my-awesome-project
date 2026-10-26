@@ -5,8 +5,10 @@ name: Deploy to GitHub Pages
 # 如果用的是 "Deploy from a branch"，这个工作流可以删掉，不删也不会影响站点。
 
 on:
-  push:
-    branches: [main]
+  # 仅手动触发：站点当前用 Settings → Pages 的 "Deploy from a branch" 模式发布。
+  # 若以后改用 "GitHub Actions" 模式发布，把下面改成:
+  #   push:
+  #     branches: [main]
   workflow_dispatch:
 
 permissions:
