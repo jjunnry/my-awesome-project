@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>姚欣杰 - 个人简历</title>
-<meta name="description" content="姚欣杰的个人简历：AI 智能体开发 · 全栈工程落地。Dify / LangGraph / RAG / MCP 全链路，两段实习系统均已交付上线。">
+<meta name="description" content="姚欣杰的个人简历：AI 智能体开发 · 全栈工程落地。Dify / LangGraph / RAG / MCP / Codex SDK 全链路，三段实习多个系统落地交付。">
 <meta property="og:title" content="姚欣杰 - 个人简历">
-<meta property="og:description" content="AI 智能体开发 · 全栈工程落地。Dify / LangGraph / RAG / MCP 全链路，两段实习系统均已交付上线。">
+<meta property="og:description" content="AI 智能体开发 · 全栈工程落地。Dify / LangGraph / RAG / MCP / Codex SDK 全链路，三段实习多个系统落地交付。">
 <meta property="og:type" content="profile">
 <link rel="icon" href="avatar.jpg">
 <style>
@@ -136,6 +136,24 @@
     border:1px solid var(--line);color:var(--text-soft);
   }
 
+  /* 展开详情 */
+  details.more{margin:4px 0 0}
+  details.more summary{
+    cursor:pointer;list-style:none;user-select:none;
+    color:var(--accent);font-size:13.5px;font-weight:500;
+    display:inline-flex;align-items:center;gap:5px;transition:opacity .15s;
+  }
+  details.more summary::-webkit-details-marker{display:none}
+  details.more summary:hover{opacity:.75}
+  details.more summary .arr{display:inline-block;font-size:12px;transition:transform .18s}
+  details.more[open] summary .arr{transform:rotate(90deg)}
+  .item li strong{color:var(--text);font-weight:600}
+  details.more .more-ul{
+    margin:8px 0 2px;padding-left:18px;
+    color:var(--text-soft);font-size:14px;
+  }
+  details.more .more-ul li{margin-bottom:5px}
+
   footer{padding:34px 0 46px;text-align:center;color:var(--text-soft);font-size:13.5px}
   footer a{color:var(--accent);text-decoration:none}
 
@@ -145,6 +163,7 @@
     body{font-size:12pt}
     section{page-break-inside:avoid;padding:18px 0}
     header{padding:0 0 18px}
+    details.more summary{cursor:auto}
   }
   @media (max-width:640px){
     header{padding:42px 0 30px}
@@ -210,7 +229,8 @@
     <p class="summary reveal">
       广东第二师范学院<strong>数据科学与大数据技术</strong>专业 2027 届本科生，专注 <strong>AI 智能体开发</strong>与<strong>工程落地</strong>。
       熟练掌握 Dify / LangGraph / RAG / MCP 智能体开发全链路，能独立完成从语料库构建、检索策略优化到 API 对接的完整流程。
-      先后完成两段 AI 智能体开发实习，主导搭建的 GIS 智能问答系统与 AI 语音调解系统均<strong>已实际交付上线</strong>。
+      先后完成三段 AI 开发实习：主导搭建的 GIS 智能问答系统与 AI 语音调解系统均<strong>已实际交付上线</strong>，
+      并基于 Codex SDK 独立实现从专利文档到可运行全栈应用的<strong>多智能体生成系统</strong>。
       同时具备扎实的全栈功底：独立完成 14 个业务模块的个人全栈项目，160+ pytest 测试覆盖，Nginx + HTTPS 生产部署，
       擅长把前沿 AI 技术做成可交付、可运维的真实系统。
     </p>
@@ -226,6 +246,8 @@
           <span class="tag">LangGraph</span>
           <span class="tag">RAG</span>
           <span class="tag">MCP</span>
+          <span class="tag">Codex SDK</span>
+          <span class="tag">多智能体编排</span>
           <span class="tag">Prompt 工程</span>
           <span class="tag">Text-to-SQL</span>
           <span class="tag">SSE 流式对话</span>
@@ -236,6 +258,7 @@
         <div class="skill-cat">后端</div>
         <div class="tags">
           <span class="tag">Python</span>
+          <span class="tag">FastAPI</span>
           <span class="tag">标准库自建 HTTP 服务</span>
           <span class="tag">REST API</span>
           <span class="tag">阿里云语音 API</span>
@@ -249,6 +272,7 @@
           <span class="tag">Web Components</span>
           <span class="tag">Vue 3</span>
           <span class="tag">Element Plus</span>
+          <span class="tag">Next.js</span>
           <span class="tag">HTML5 / CSS3</span>
           <span class="tag">JavaScript</span>
         </div>
@@ -266,6 +290,7 @@
         <div class="skill-cat">工程与运维</div>
         <div class="tags">
           <span class="tag">Git</span>
+          <span class="tag">Docker</span>
           <span class="tag">pytest（160+ 用例）</span>
           <span class="tag">Nginx + HTTPS 部署</span>
           <span class="tag">Linux</span>
@@ -282,6 +307,54 @@
       <div class="item">
         <div class="item-head">
           <div>
+            <div class="item-title">广州市奇之信息科技有限公司 · AI 应用开发实习</div>
+            <div class="item-sub">大模型检索工程 · 多智能体系统 · 全栈交付</div>
+          </div>
+          <div class="item-date">2026.09 — 至今</div>
+        </div>
+        <ul>
+          <li>
+            <strong>专利侵权风险检测平台</strong>：基于 FastAPI + Django 统一编排外观/发明专利、商标、版权、诉讼 5 类检测线路，聚合 10+ 国内外数据源，结合 DINOv2 视觉同款判断与 LLM 流式风险分析，开发 eBay/Shopify/京东联盟等电商侵权监控 Worker。
+            <details class="more">
+              <summary><span class="arr">▸</span>展开详情</summary>
+              <ul class="more-ul">
+                <li>基于 FastAPI + Django/DRF 构建综合侵权检测服务，聚合 Google/百度以图搜图、USPTO 外观专利、Signa.so 商标、CourtListener 诉讼等 10+ 数据源，输出风险等级、证据链与数据源审计信息；</li>
+                <li>引入 DINOv2 视觉模型做商品“同款”判断，结合 LLM 完成候选排序与侵权风险分析（NDJSON 流式返回）；设计 SerpAPI 多账号 Key 自动回退与密钥脱敏机制；</li>
+                <li>开发持续监控 Worker，接入 eBay（OAuth 自动刷新）、Shopify Global Catalog、京东联盟、大淘客 4 个监控来源；打通 JWT 认证、钱包计费与运营后台。</li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <strong>专利应用一键生成器（多智能体系统）</strong>：基于 Codex TypeScript SDK 构建主代理规划、前后端子代理并行、reviewer 独立评审的多智能体系统，上传专利自动生成可运行的全栈应用，无人干预 84 分钟端到端交付。
+            <details class="more">
+              <summary><span class="arr">▸</span>展开详情</summary>
+              <ul class="more-ul">
+                <li>实现“上传专利 → 生成可运行全栈应用”的完整链路：主代理负责规划与整合，frontend/backend 子代理并行编码，reviewer 子代理独立评审，产出 React 前端 + Node/Python 后端 + SQLite 的完整项目；</li>
+                <li>设计“真实构建 → Playwright 页面/接口检查 → 模型视觉复核”自动验收链路，失败自动修复（最多 6 轮）；Docker 容器强隔离（非 root、只读文件系统、seccomp）；</li>
+                <li>冻结镜像实测：无人干预真实专利任务 84 分钟端到端交付，85 项代码测试 + 21 项浏览器检查全部通过。</li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <strong>舆情风险研训管理平台</strong>：独立完成 Next.js + FastAPI + SQLite 全栈平台，覆盖课程学习、考试竞赛、演练复盘、积分排行等 9 大业务模块，管理员/学员双端，支持局域网多人使用。
+            <details class="more">
+              <summary><span class="arr">▸</span>展开详情</summary>
+              <ul class="more-ul">
+                <li>覆盖课程课件（PDF/视频）、限时答卷、规则初评 + 教师评分、题库试卷竞赛、积分排行榜、演练复盘、辅助助手等 9 大业务模块；</li>
+                <li>辅助助手基于本地知识检索与文稿模板，零外部大模型 API 依赖即可运行；</li>
+                <li>配套 Alembic 迁移、pytest 回归测试与一键备份/恢复，支持局域网多人访问。</li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+        <div class="stack">
+          <span>FastAPI</span><span>Codex SDK</span><span>多智能体编排</span><span>DINOv2</span><span>Next.js</span><span>Docker</span><span>Playwright</span><span>LLM 流式</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <div>
             <div class="item-title">广东省城乡规划设计研究院 · AI 智能体开发实习</div>
             <div class="item-sub">GIS 智能体开发</div>
           </div>
@@ -289,7 +362,7 @@
         </div>
         <ul>
           <li>基于 Dify + MCP 架构从 0 到 1 搭建 GIS 领域智能问答系统，集成 50 万字专业语料库与 70+ 标准化空间网格指标，实现自然语言驱动的空间数据分析与选址推荐，系统已交付并支持内部业务咨询；</li>
-          <li>采用"父子分段"策略优化长文本 RAG 检索，解决多源异构空间数据的语义对齐难题，复杂规划问题回答准确率达 85%+；</li>
+          <li>采用“父子分段”策略优化长文本 RAG 检索，解决多源异构空间数据的语义对齐难题，复杂规划问题回答准确率达 85%+；</li>
           <li>开发 Text-to-SQL 智能查询工作流，支持用户通过对话直接查询空间数据库，非技术人员的选址装配效率提升 40%+。</li>
         </ul>
         <div class="stack">
@@ -306,7 +379,7 @@
           <div class="item-date">2025.07 — 2025.09</div>
         </div>
         <ul>
-          <li>主导 AI 外呼调解系统后端开发，基于 Dify 搭建语音对话工作流，集成阿里云语音 API 实现"呼叫 → 语音识别 → 智能应答 → 语音合成"全链路闭环，系统已上线并支持实时语音对话；</li>
+          <li>主导 AI 外呼调解系统后端开发，基于 Dify 搭建语音对话工作流，集成阿里云语音 API 实现“呼叫 → 语音识别 → 智能应答 → 语音合成”全链路闭环，系统已上线并支持实时语音对话；</li>
           <li>独立攻克阿里云外呼 API 与 Dify 的异步通信及数据转换难题，设计状态机管理对话上下文，保障平均 3-5 分钟长时通话的稳定性与连贯性；</li>
           <li>通过提示词工程优化智能体应答逻辑，对话完成率提升至 80%+，推动模块在 2 个月内完成试运行并交付。</li>
         </ul>
@@ -331,7 +404,7 @@
           <div class="item-date">2025.07 — 至今</div>
         </div>
         <ul>
-          <li>基于 LangGraph + Dify + DeepSeek 搭建智能问答系统，设计"意图识别 → 多路检索 → 推理生成"的 Agent 工作流，实现政策与业务数据的统一问答；</li>
+          <li>基于 LangGraph + Dify + DeepSeek 搭建智能问答系统，设计“意图识别 → 多路检索 → 推理生成”的 Agent 工作流，实现政策与业务数据的统一问答；</li>
           <li>清洗解析 500+ 份核心政策文件，构建 10 万+ 向量块的知识库，结合向量数据库优化语义检索与重排策略，解决复杂政策交叉解读难题；</li>
           <li>持续优化 Prompt 与检索链路，系统综合准确率达 95%，简单问题秒级响应、复杂推理 1 分钟内返回，达到企业验收标准。</li>
         </ul>
@@ -421,6 +494,11 @@
   } else {
     items.forEach(function (el) { el.classList.add('in'); });
   }
+
+  // 打印 / 导出 PDF 时自动展开全部详情
+  window.addEventListener('beforeprint', function () {
+    document.querySelectorAll('details.more').forEach(function (d) { d.open = true; });
+  });
 })();
 </script>
 </body>
